@@ -1,11 +1,12 @@
-import { Profile } from './Profile/Profile';
-import { Statistics } from './Statistics/Statistics';
-import { FriendList } from './FriendList/FriendList';
-import { TransactionHistory } from './TransactionHistory/TransactionHistory';
-import user from './dataBase/user.json';
-import data from './dataBase/data.json';
-import friends from './dataBase/friends.json';
-import transactions from './dataBase/transactions.json';
+// import { Profile } from './Profile/Profile';
+// import { Statistics } from './Statistics/Statistics';
+// import { FriendList } from './FriendList/FriendList';
+// import { TransactionHistory } from './TransactionHistory/TransactionHistory';
+// import user from './dataBase/user.json';
+// import data from './dataBase/data.json';
+// import friends from './dataBase/friends.json';
+// import transactions from './dataBase/transactions.json';
+import { Counter } from './Counter/Counter';
 
 export const App = () => {
   return (
@@ -19,7 +20,8 @@ export const App = () => {
         color: '#010101',
       }}
     >
-      <Profile
+      <Counter />
+      {/* <Profile
         username={user.username}
         tag={user.tag}
         location={user.location}
@@ -28,7 +30,7 @@ export const App = () => {
       />
       <Statistics title="Upload stats" stats={data} />
       <FriendList friends={friends} />
-      <TransactionHistory items={transactions} />
+      <TransactionHistory items={transactions} /> */}
     </div>
   );
 };
