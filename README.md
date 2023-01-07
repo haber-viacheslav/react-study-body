@@ -1,1 +1,1 @@
-### goit-react-hw-01-components
+### React study and practice
