@@ -1,16 +1,29 @@
 import styled from 'styled-components';
-
-export const StatSection = styled.section`
+export const StatisticsWrp = styled.div`
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 1px 4px 6px #2e2bc2, -1px -2px 4px #1d06eb;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 406px;
-  background-color: rgb(255, 254, 170);
-  box-shadow: 1px 2px 3px 2px #313131;
+  gap: 20px;
 `;
 
-export const StatTitle = styled.h2`
-  padding: 20px 0 20px;
-  font-weight: 600;
-  color: #313131;
+export const StatisticsItem = styled.p`
+  font-size: 20px;
+`;
+
+export const StatisticsValue = styled.span`
+  color: ${props => {
+    switch (props.statsValue) {
+      case 'good':
+        return '#00c900';
+      case 'neutral':
+        return '#fbff00';
+      case 'bad':
+        return '#ff0000';
+      case 'total':
+        return '#04c4ff';
+      default:
+        return '#ffffff';
+    }
+  }};
 `;

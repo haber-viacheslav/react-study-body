@@ -1,23 +1,40 @@
-import { StatList } from '../StatList/StatList';
 import PropTypes from 'prop-types';
-import { StatSection, StatTitle } from './Statistics.styled';
+import {
+  StatisticsWrp,
+  StatisticsItem,
+  StatisticsValue,
+} from './Statistics.styled';
 
-export const Statistics = ({ title, stats }) => {
+const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
   return (
-    <StatSection>
-      <StatTitle>{title}</StatTitle>
-      <StatList stats={stats} />
-    </StatSection>
+    <StatisticsWrp>
+      <StatisticsItem>
+        Good: <StatisticsValue statsValue={'good'}>{good}</StatisticsValue>
+      </StatisticsItem>
+      <StatisticsItem>
+        Neutral:{' '}
+        <StatisticsValue statsValue={'neutral'}>{neutral}</StatisticsValue>
+      </StatisticsItem>
+      <StatisticsItem>
+        Bad: <StatisticsValue statsValue={'bad'}>{bad}</StatisticsValue>
+      </StatisticsItem>
+      <StatisticsItem>
+        Total: <StatisticsValue statsValue={'total'}>{total}</StatisticsValue>
+      </StatisticsItem>
+      <StatisticsItem>
+        Positive feedback:{' '}
+        <StatisticsValue>{positivePercentage}%</StatisticsValue>
+      </StatisticsItem>
+    </StatisticsWrp>
   );
 };
 
 Statistics.propTypes = {
-  title: PropTypes.string,
-  stats: PropTypes.arrayOf(
-    PropTypes.exact({
-      id: PropTypes.string.isRequired,
-      label: PropTypes.string.isRequired,
-      percentage: PropTypes.number.isRequired,
-    }).isRequired
-  ),
+  good: PropTypes.number.isRequired,
+  neutral: PropTypes.number.isRequired,
+  bad: PropTypes.number.isRequired,
+  total: PropTypes.number.isRequired,
+  positivePercentage: PropTypes.number.isRequired,
 };
+
+export default Statistics;
